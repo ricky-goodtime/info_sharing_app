@@ -1,0 +1,18 @@
+{% extends 'info_sharing_app/base.html' %}
+
+{% block content %}
+<div class="add_comment">
+    <div class='replied_info'>
+        <h3><strong><a href="{% url 'info_detail' pk=info.pk %}">{{ info.title }}</a></strong></h3>
+        <p>{{ info.text|linebreaksbr }}</p>
+    </div>
+    <div class="add_comment_main">
+        <h2>コメントを追加</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

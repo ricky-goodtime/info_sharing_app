@@ -1,0 +1,38 @@
+{% extends 'info_sharing_app/base.html' %}
+
+{% block content %}
+<div>
+    <div class="info_detail">
+        <div class="info_detail_top">
+            <p><span>{{ info.get_info_about_display }}</span>
+                作成者: {{ info.person }}</p>
+        </div>
+        <div class="info_detail_main">
+            <h2>{{ info.title }}</h2>
+            <p>{{ info.text|linebreaksbr }}</p>
+            <p>作成: {{ info.shared_date }}
+                {% if info.updated_date %}
+                    | 更新: {{ info.updated_date }}
+                {% endif %}
+            </p>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="info_detail_button">
+            <a href="{% url 'info_edit' pk=info.pk %}" class="edit">編集</a>
+            <a href="{% url 'info_remove' pk=info.pk %}" class="remove">削除</a>
+        </div>
+        {% endif %}
+    </div>
+    <hr class="info_detail_hr">
+    <div class="info_detail_comment">
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_comment' pk=info.pk %}" class="comment_button">コメントする</a>
+        {% endif %}
+
+        {% for comment in info.comments.all %}
+        <p class="comment_item">{{ comment.get_comment_about_display }} by {{ comment.person }}</p>
+        <p>{{ comment.text|linebreaksbr }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

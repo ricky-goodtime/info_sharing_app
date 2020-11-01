@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <link rel="stylesheet" href="{% static 'info_sharing_app/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="/">情報共有ツール</a></h1>
+        <div id="header-menu">
+            <a href="{% url 'readme' %}">README</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'info_new' %}">シェアする</a>
+            <a href="{% url 'logout' %}">ログアウト</a>
+            {% else %}
+            <a href="{% url 'login' %}">ログイン</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <div id="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* 共通 */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+}
+a {
+    color: blue;
+}
+ul, ol, li {
+    list-style-position: inside;
+}
+hr {
+    height: 1px;
+    background: #111;
+}
+
+body {
+    width: 950px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    background: rgb(255, 175, 70);
+    border-bottom: 2px solid #fff;
+}
+
+header h1 a:hover {
+    opacity: 0.5;
+}
+
+header #header-menu {
+    display: flex;
+}
+
+header #header-menu a {
+    display: block;
+    width: 120px;
+    padding: 9px 0;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+header #header-menu a:hover {
+    opacity: 0.5;
+}
+
+#container {
+    padding: 25px 50px;
+    background: #ffd;
+    min-height: 100vh;
+}
+
+/* info_list */
+.info_list {
+    padding: 28px 180px 30px 15px;
+    position: relative;
+}
+.info_list .date {
+    margin-top: 15px;
+}
+.info_about {
+    position: absolute;
+    width: 100px;
+    padding: 2px 0;
+    top: 30px;
+    right: 20px;
+    border-radius: 3px;
+    background: green;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* README */
+#readme {
+    padding: 15px 30px;
+}
+#readme > div:not(:first-child) {
+    margin-top: 40px;
+}
+#readme ul, ol {
+    margin-top: 14px;
+}
+#readme ul li {
+    text-indent: -1.3em;
+    padding-left: 2em;
+    list-style-type: square;
+    margin-top: 8px;
+}
+#readme ol li {
+    padding-left: 1em;
+    margin-top: 4px;
+}
+
+/* info_detail */
+.info_detail .info_detail_top span {
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: green;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.info_detail .info_detail_main {
+    padding: 12px 15px 18px;
+    background: #fff;
+    border: 2px solid #ffb;
+    margin: 18px 0 12px;
+}
+
+.info_detail .info_detail_main p {
+    margin-top: 15px;
+}
+
+.info_detail .info_detail_button {
+    display: flex;
+}
+
+.info_detail .info_detail_button a {
+    display: block;
+    width: 90px;
+    padding: 2px 0;
+    border-radius: 3px;
+    background: #08d;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.info_detail .info_detail_button a:hover {
+    opacity: 0.7;
+}
+
+.info_detail .info_detail_button a.edit {
+    background: #08d;
+    margin: 0 10px;
+}
+
+.info_detail .info_detail_button a.remove {
+    background: tomato;
+}
+
+hr.info_detail_hr {
+    margin: 25px 0 15px;
+}
+
+.info_detail_comment {
+    margin-left: 10px;
+}
+
+.info_detail_comment a.comment_button {
+    display: block;
+    width: 130px;
+    padding: 4px 0;
+    border-radius: 3px;
+    background: #08d;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info_detail_comment a.comment_button:hover {
+    opacity: 0.7;
+}
+
+.info_detail_comment p.comment_item {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* info_edit */
+.info_edit form {
+    margin-top: 10px;
+}
+
+.info_edit input, .info_edit select, .info_edit textarea {
+    display: block;
+    padding: 3px 5px;
+    margin-bottom: 10px;
+}
+
+.info_edit input, .info_edit textarea {
+    width: 400px;
+}
+
+.info_edit select {
+    width: 150px;
+}
+
+.info_edit textarea {
+    height: 200px;
+}
+
+.info_edit button {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: #0bd;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.info_edit button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* add_comment */
+.add_comment .replied_info {
+    padding: 15px;
+    border: 1px solid #880;
+}
+
+.add_comment .replied_info p {
+    margin-top: 8px;
+}
+
+.add_comment .replied_info strong a {
+    text-decoration: underline;
+}
+
+.add_comment .add_comment_main {
+    margin-top: 25px;
+}
+
+.add_comment .add_comment_main form {
+    margin-top: 10px;
+}
+
+.add_comment input, .add_comment select, .add_comment textarea {
+    display: block;
+    padding: 3px 5px;
+    margin-bottom: 10px;
+}
+
+.add_comment .add_comment_main select {
+    width: 150px;
+}
+
+.add_comment .add_comment_main textarea {
+    width: 400px;
+}
+
+.add_comment .add_comment_main button {
+    padding: 5px 15px;
+    border-radius: 6px;
+    background: #0bd;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.add_comment .add_comment_main button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* login */
+.login form {
+    margin-top: 15px;
+}
+.login input[type="text"], .login input[type="password"] {
+    padding: 2px 5px;
+    margin-left: 5px;
+}
+.login input[type="submit"] {
+    padding: 5px 15px;
+    border-radius: 6px;
+    background: #0bd;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 15px;
+}

@@ -1,0 +1,25 @@
+{% extends 'info_sharing_app/base.html' %}
+
+{% block content %}
+    <hr>
+    {% for info in infos %}
+    <div class="info_list">
+        <h2><a href="{% url 'info_detail' pk=info.pk %}">{{ info.title }}</a></h2>
+        {% if info.comments.count > 0 %}
+        <p> >> <a href="{% url 'info_detail' pk=info.pk %}">コメント {{ info.comments.count }} 件</a></p>
+        {% endif %}
+        <div class="date">
+            <p>作成日: {{ info.shared_date }}
+                / 作成者: {{ info.person }}
+            </p>
+            {% if info.updated_date %}
+                <p>更新日: {{ info.updated_date }}</p>
+            {% endif %}
+        </div>
+        <div class="info_about">
+            {{ info.get_info_about_display }}
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+{% endblock %}

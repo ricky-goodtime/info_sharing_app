@@ -1,0 +1,12 @@
+{% extends 'info_sharing_app/base.html' %}
+
+{% block content %}
+<div class="info_edit">
+    <h2>情報を共有/編集</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">シェアする</button>
+    </form>
+</div>
+{% endblock %}
